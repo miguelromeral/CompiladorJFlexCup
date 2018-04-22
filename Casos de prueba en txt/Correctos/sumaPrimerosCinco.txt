@@ -1,0 +1,17 @@
+program sumaPrimerosCinco is
+	var count, suma : integer;
+	var continuar : boolean;
+begin
+	continuar := true;
+	count := 5;
+	suma := 0;
+	while continuar do
+		suma := suma + count;
+		if count > 0 then
+			count := count - 1;
+		else
+			continuar := false;
+		end if;
+	end while;
+	write suma;
+end

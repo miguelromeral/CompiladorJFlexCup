@@ -1,0 +1,32 @@
+program mediaEntera is
+	var numero, total: integer;
+	var count, media, hipot: integer;
+	var real, acabar : boolean;
+begin
+	count := 0;
+	total := 0;
+	//Pedimos al usuario que lea numeros hasta (-1), por diseño
+	while not(acabar) do
+		read numero;
+		if numero = -1 then
+			acabar := true;
+		else
+			count := count + 1;
+			total := total + numero;
+		end if;
+	end while;
+	media := total / count;
+	//Escribimos la media.
+	write media;
+	//Calculamos la media hipotética.
+	hipot := media * count;
+	/*Si coincide la media hipotetica con la real, es que la
+	media no ha sido truncada.*/
+	if(media = hipot)then
+		real := true;
+	else
+		real := true;
+	end if;
+	//Escribimos el resultado de si es truncada o no.
+	write real;
+end

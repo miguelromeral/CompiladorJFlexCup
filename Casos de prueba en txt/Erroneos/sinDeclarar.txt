@@ -1,0 +1,5 @@
+program sinDeclarar is
+	var declarada: boolean;
+begin
+	declarada := not(sindeclarar);
+end

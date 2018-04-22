@@ -1,0 +1,7 @@
+program escrituraAntesDeLectura is
+	var int : integer;
+begin
+	//Se intenta escribir antes de haber sido inicializada la variable.
+	write int;
+	read int;
+end

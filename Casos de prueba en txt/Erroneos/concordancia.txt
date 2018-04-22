@@ -1,0 +1,8 @@
+program concordancia is
+	var entero : integer;
+	var bool : boolean;
+begin
+	entero := 5;
+	bool := false;
+	bool := entero;
+end

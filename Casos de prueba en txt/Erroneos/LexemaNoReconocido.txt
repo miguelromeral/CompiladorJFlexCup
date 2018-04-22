@@ -1,0 +1,8 @@
+program LexemaNoReconocido is
+	var i : integer;
+begin
+	$temp := 10;
+	if i > $temp then
+		i := 0;
+	end if;
+end

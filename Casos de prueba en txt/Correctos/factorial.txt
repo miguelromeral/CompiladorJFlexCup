@@ -1,0 +1,12 @@
+program factorial is
+	var numero, total: integer;
+begin
+	read numero;
+	total := numero;
+	numero := numero - 1;
+	while numero > 0 do
+		total := total * numero;
+		numero := numero - 1;
+	end while;
+	write total;
+end

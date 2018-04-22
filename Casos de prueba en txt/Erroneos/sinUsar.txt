@@ -1,0 +1,6 @@
+program sinUsar is
+	var primera, segunda : integer;
+begin
+	//Uso primera pero no segunda
+	primera := 5;
+end

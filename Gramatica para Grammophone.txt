@@ -1,0 +1,58 @@
+#Gramática formateada para ser analizada en Grammophone.
+INICIO -> PROGRAM.
+PROGRAM -> tk_program tk_identificador tk_is BLOQUEDEFINICIONVARIABLE DEFINICIONPROGRAMA.
+BLOQUEDEFINICIONVARIABLES -> DVA.
+DVA -> DEFINICIONVARIABLE DVA.
+DVA -> .
+DEFINICIONVARIABLE -> tk_var LISTAVARIABLES tk_dospuntos DECLARACIONTIPO tk_puntoycoma.
+DEFINICIONVARIABLE -> error.
+LISTAVARIABLES -> tk_identificador LVA.
+LISTAVARIABLES -> error.
+LVA -> tk_coma tk_identificador LVA.
+LVA -> .
+LVA -> error.
+DEFINICIONPROGRAMA -> tk_begin BLOQUEDESENTENCIAS tk_end.
+DECLARACIONTIPO -> tk_integer.
+DECLARACIONTIPO -> tk_boolean.
+DECLARACIONTIPO -> error.
+BLOQUEDESENTENCIAS -> BDSA.
+BDSA -> DEFINICIONSENTENCIA BDSA.
+BDSA -> .
+DEFINICIONSENTENCIA -> tk_skip tk_puntoycoma.
+DEFINICIONSENTENCIA -> tk_read tk_identificador tk_puntoycoma.
+DEFINICIONSENTENCIA -> tk_write tk_identificador tk_puntoycoma.
+DEFINICIONSENTENCIA -> DEFINICIONIF.
+DEFINICIONSENTENCIA -> tk_while LISTAEXPRESIONES tk_do BLOQUEDESENTENCIAS tk_end tk_while tk_puntoycoma.
+DEFINICIONSENTENCIA -> tk_identificador tk_asignacion AVERQUEASIGNAMOS tk_puntoycoma.
+DEFINICIONIF -> tk_if LISTAEXPRESIONES tk_then BLOQUEDESENTENCIAS DEFINICIONELSE tk_end tk_if tk_puntoycoma.
+DEFINICIONELSE -> tk_else BLOQUEDESENTENCIAS.
+DEFINICIONELSE -> .
+LISTAEXPRESIONES -> EXPRESIONBOOLEANA EAA.
+EAA -> SIGUEEXPRESION EXPRESIONBOOLEANA EAA.
+EAA -> .
+SIGUEEXPRESION -> tk_and.
+SIGUEEXPRESION -> tk_or.
+EXPRESIONBOOLEANA -> tk_parenizq LISTAEXPRESIONES tk_parender.
+EXPRESIONBOOLEANA -> COMPARACION.
+EXPRESIONBOOLEANA -> tk_not tk_parenizq LISTAEXPRESIONES tk_parender.
+EXPRESIONBOOLEANA -> error.
+COMPARACION -> tk_identificador tk_comparacion tk_numeroentero.
+COMPARACION -> tk_numeroentero tk_comparacion tk_identificador.
+COMPARACION -> tk_identificador.
+COMPARACION -> tk_identificador tk_comparacion tk_identificador.
+COMPARACION -> true.
+AVERQUEASIGNAMOS -> tk_true.
+AVERQUEASIGNAMOS -> tk_false.
+AVERQUEASIGNAMOS -> IDEOENTERO LISTADEASIGNACIONES.
+AVERQUEASIGNAMOS -> tk_not tk_parenizq LISTAEXPRESIONES tk_parender.
+AVERQUEASIGNAMOS -> tk_parenizq LISTAEXPRESIONES tk_parender.
+LISTADEASIGNACIONES -> OPERADORMATES IDEOENTERO LISTADEASIGNACIONES.
+LISTADEASIGNACIONES -> .
+LISTADEASIGNACIONES -> error.
+OPERADORMATES -> tk_suma.
+OPERADORMATES -> tk_resta.
+OPERADORMATES -> tk_multiplicacion.
+OPERADORMATES -> tk_division.
+IDEOENTERO -> tk_identificador.
+IDEOENTERO -> tk_numeroentero.
+

@@ -1,0 +1,8 @@
+program sinFin is
+	var sinfin : boolean;
+	var int : integer;
+begin
+	while sinfin do
+		int := int + 1;
+	end while;
+end
